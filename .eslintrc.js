@@ -1,4 +1,4 @@
-{
+export default {
     "root": true,
     "env": {
         "browser": true,
@@ -36,4 +36,4 @@
         ],
         "no-console": 1
     }
-}
+};
