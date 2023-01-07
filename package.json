@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --reporter progress --require @babel/register *.test.js"
+    "test": "mocha --reporter progress --require @babel/register *.test.js",
+    "lint": "eslint . --config .eslintrc.js"
   },
   "author": "Rahul Yedida",
   "license": "MIT",
@@ -14,6 +15,7 @@
     "@babel/register": "^7.18.9",
     "babel-loader": "^9.1.2",
     "chai": "^4.3.7",
+    "eslint": "^8.31.0",
     "mocha": "^10.2.0",
     "webpack": "^5.75.0"
   }
