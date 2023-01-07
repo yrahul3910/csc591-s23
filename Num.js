@@ -30,4 +30,4 @@ export default class Num {
         if (this.count < 2) return 0;
         return Math.sqrt(this.m2 / (this.count - 1));
     }
-};
+}

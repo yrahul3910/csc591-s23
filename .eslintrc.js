@@ -1,39 +1,35 @@
-export default {
-    "root": true,
-    "env": {
-        "browser": true,
-        "node": true,
-        "mocha": true
+module.exports = {
+    'root': true,
+    'env': {
+        'browser': true,
+        'node': true,
+        'mocha': true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
-    "plugins": [
-        "react"
-    ],
-    "parserOptions": {
-        "ecmaVersion": 7,
-        "ecmaFeatures": {
-            "experimentalObjectRestSpread": true,
-            "jsx": true
+    'extends': ['eslint:recommended'],
+    'parserOptions': {
+        'ecmaVersion': 7,
+        'ecmaFeatures': {
+            'experimentalObjectRestSpread': true
         },
-        "sourceType": "module"
+        'sourceType': 'module'
     },
-    "rules": {
-        "indent": [
-            "error",
+    'rules': {
+        'indent': [
+            'error',
             4
         ],
-        "linebreak-style": [
-            "error",
-            "unix"
+        'linebreak-style': [
+            'error',
+            'unix'
         ],
-        "quotes": [
-            "error",
-            "double"
+        'quotes': [
+            'error',
+            'single'
         ],
-        "semi": [
-            "error",
-            "always"
+        'semi': [
+            'error',
+            'always'
         ],
-        "no-console": 1
+        'no-console': 1
     }
 };
