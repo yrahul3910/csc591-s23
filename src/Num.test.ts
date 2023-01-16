@@ -5,7 +5,7 @@ describe('Num', () => {
     const nums = [1, 1, 1, 1, 2, 2, 3];
 
     it('should return the mean of the num', () => {
-        let num = new Num();
+        const num = new Num();
 
         nums.forEach(num.add);
         const mean = num.mid();
@@ -14,7 +14,7 @@ describe('Num', () => {
     });
 
     it('should return the standard deviation of the num', () => {
-        let num = new Num();
+        const num = new Num();
 
         nums.forEach(num.add);
         const std = num.div();
