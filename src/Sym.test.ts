@@ -5,7 +5,7 @@ describe('Sym', () => {
     const syms = ['a', 'a', 'a', 'a', 'b', 'b', 'c'];
 
     it('should return the mode of the sym', () => {
-        let sym = new Sym();
+        const sym = new Sym();
 
         syms.forEach(sym.add);
         const mode = sym.mid();
@@ -14,7 +14,7 @@ describe('Sym', () => {
     });
 
     it('should return the entropy of the sym', () => {
-        let sym = new Sym();
+        const sym = new Sym();
 
         syms.forEach(sym.add);
         const entropy = sym.div();

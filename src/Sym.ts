@@ -1,7 +1,15 @@
 export default class Sym {
-    constructor() {
+    counts: {[x: string]: number};
+    n: number;
+    at: number;
+    txt: string;
+
+    constructor(at=0, txt='') {
         this.counts = {};
         this.n = 0;
+
+        this.at = at;
+        this.txt = txt;
 
         this.add = this.add.bind(this);
         this.mid = this.mid.bind(this);
@@ -9,7 +17,9 @@ export default class Sym {
     }
 
     // Add a new value to the Sym
-    add(x) {
+    add(x: string | number) {
+        if (x == '?') return;
+
         this.n++;
         if (x in this.counts) {
             this.counts[x]++;
@@ -22,7 +32,7 @@ export default class Sym {
     mid() {
         let max = 0;
         let mode = null;
-        for (let key in this.counts) {
+        for (const key in this.counts) {
             if (this.counts[key] > max) {
                 max = this.counts[key];
                 mode = key;
@@ -34,8 +44,8 @@ export default class Sym {
     // Return the entropy of the Sym
     div() {
         let sum = 0;
-        for (let key in this.counts) {
-            let p = this.counts[key] / this.n;
+        for (const key in this.counts) {
+            const p = this.counts[key] / this.n;
             sum -= p * Math.log2(p);
         }
         return sum;

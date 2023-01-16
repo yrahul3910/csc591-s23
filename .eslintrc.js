@@ -5,7 +5,8 @@ module.exports = {
         'node': true,
         'mocha': true
     },
-    'extends': ['eslint:recommended'],
+    'extends': ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+    'parser': '@typescript-eslint/parser',
     'parserOptions': {
         'ecmaVersion': 7,
         'ecmaFeatures': {
@@ -13,6 +14,7 @@ module.exports = {
         },
         'sourceType': 'module'
     },
+    'plugins': ['@typescript-eslint'],
     'rules': {
         'indent': [
             'error',

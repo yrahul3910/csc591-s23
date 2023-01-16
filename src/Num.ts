@@ -1,8 +1,24 @@
 export default class Num {
-    constructor() {
+    count: number;
+    m2: number;
+    sum: number;
+    at: number;
+    txt: string;
+    w: number;
+
+    constructor(at=0, txt='') {
         this.count = 0;
         this.m2 = 0;
         this.sum = 0;
+
+        this.at = at;
+        this.txt = txt;
+
+        if (/-$/.test(this.txt)) {
+            this.w = -1;
+        } else {
+            this.w = 1;
+        }
 
         this.add = this.add.bind(this);
         this.mid = this.mid.bind(this);
@@ -10,12 +26,15 @@ export default class Num {
     }
 
     // Add a new value to the Num
-    add(x) {
+    add(x: number | string) {
+        if (x == '?') return;
+        if (typeof(x) === 'string') return;
+
         this.count++;
         this.sum += x;
 
         // Welford's online algorithm
-        let delta = x - this.mid();
+        const delta = x - this.mid();
         this.m2 += delta * (x - this.mid());
     }
 
