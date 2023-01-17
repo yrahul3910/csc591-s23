@@ -14,7 +14,7 @@ export default class Num {
         this.at = at;
         this.txt = txt;
 
-        if (/-$/.test(this.txt)) {
+        if (this.txt[this.txt.length - 1] === '-') {
             this.w = -1;
         } else {
             this.w = 1;
@@ -28,7 +28,8 @@ export default class Num {
     // Add a new value to the Num
     add(x: number | string) {
         if (x == '?') return;
-        if (typeof(x) === 'string') return;
+
+        x = x as number;
 
         this.count++;
         this.sum += x;
