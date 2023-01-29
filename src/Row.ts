@@ -1,7 +1,7 @@
 export default class Row {
-    cells: Array<number | string>;
+    cells: Array<number | '?'>;
 
-    constructor(cells: Array<number | string>) {
+    constructor(cells: Array<number | '?'>) {
         this.cells = cells;
     }
 }
