@@ -32,7 +32,7 @@ describe('Data', () => {
     it('performs 1-level bi-clustering', () => {
         const data = new Data('auto93.csv');
 
-        let [left, right, A, B,] = data.half(data.rows, data.cols, null);
+        let [left, right,] = data.half(data.rows, data.cols, null);
         left = left as Row[];
         right = right as Row[];
 
