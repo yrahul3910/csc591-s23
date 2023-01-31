@@ -38,7 +38,7 @@ const repCols = (cols: (number | string)[][]) => {
     copy.unshift(cols[0].map((v: any, k: any) => `Num${k}`));
     cols[0][cols[0].length - 1] = 'thingX';
 
-    return new Data(cols as Row[]);
+    return new Data(cols);
 };
 
 const repRows = (t: RepGrid, rows: (number | string)[][]) => {
