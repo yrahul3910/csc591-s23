@@ -50,4 +50,14 @@ export default class Sym {
         }
         return sum;
     }
+
+    // Compute the distance
+    dist(s1: number | string, s2: number | string) {
+        if (typeof s1 === 'number' || typeof s2 === 'number') {
+            throw new Error('Cannot compute distance between numbers');
+        }
+
+        if ((s1 === s2) && (s1 !== '?')) return 0;
+        return 1;
+    }
 }
