@@ -81,9 +81,26 @@ const repPlace = (data: Data) => {
     console.log('');
     for (let y = 1; y < maxy; y++) console.log(g[y]);
 };
+
+const show = (node: Data, lvl = 0) => {
+    if (node) {
+        console.log('|..'.repeat(lvl), node);
+
+        if (!node.left) {
+            console.log(node.rows[node.rows.length - 1].cells[node.rows[node.rows.length - 1].cells.length - 1]);
+        } else {
+            console.log(Math.round(100 * node.c));
+        }
+
+        show(node.left, lvl + 1);
+        show(node.right, lvl + 1);
+    }
+};
   
 const repgrid = () => {
     const rows = repRows(grid, transpose(grid.cols));
     const cols = repCols(grid.cols);
+    show(rows.cluster(null, null, null, rows.rows[0]));
+    show(cols.cluster(null, null, null, cols.rows[0]));
     repPlace(rows);
 };
